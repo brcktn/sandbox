@@ -1,6 +1,8 @@
 """
 A simple script to solve the problem presented by 3Blue1Brown in this video
 youtube.com/shorts/t3jZ2xGOvYg
+
+Shows that the distribution is uniform for integers [1,11]
 """
 
 import random
@@ -45,5 +47,6 @@ for i in range(50000):
     clock = Clock()
     last_hours.append(clock.simulate())
 
-plt.hist(last_hours)
+plt.hist(last_hours, bins = [i - 0.5 for i in range(1,13)])
+plt.xticks(range(1,13))
 plt.show()
